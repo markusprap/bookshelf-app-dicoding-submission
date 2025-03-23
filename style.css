@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&family=Montserrat:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: white;
+}
+
+.head_bar {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+main {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.input_section, .search_section, .book_shelf {
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 16px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input_section > h2, .search_section > h2, .book_shelf > h2 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.input_section > form > .input > label, .input_section > form > .input_inline > label {
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+.input_section > form > .input_inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+    color: cornflowerblue;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.input_section > form > button {
+    display: block;
+    width: 100%;
+}
+
+.input_section > form > button, .search_section > form > button {
+    background-color: cornflowerblue;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search_section > form {
+    padding: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 0.5fr;
+    grid-gap: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.book_shelf > .book_list > .book_item {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    animation: fadeIn 0.5s ease;
+    background-color: #f9f9f9;
+}
+
+.book_item:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.book_shelf > .book_list > .book_item > h3, p {
+    margin: 8px 0;
+}
+
+.book_shelf > .book_list > .book_item > .action > button {
+    border: 0;
+    padding: 8px;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.complete-button { background-color: darkgreen; }
+.undo-button { background-color: gray; }
+.delete-button { background-color: darkred; }
+.edit-button { background-color: #008CBA; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .search_section > form {
+        grid-template-columns: 1fr;
+    }
+
+    .input_section > form > .input_inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book_shelf > .book_list > .book_item > .action > button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
